@@ -7,215 +7,190 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     width: 1024px; height: 1024px;
-    background: #f6f1e5;
-    color: #191713;
+    background: #0d1b26;
+    color: #f2ede3;
     font-family: Georgia, "Times New Roman", serif;
-    padding: 20px 30px 14px 30px;
+    padding: 22px 28px 12px 28px;
   }
   /* ---------- masthead ---------- */
-  .masthead { text-align: center; border-bottom: 5px solid #191713; padding-bottom: 10px; }
+  .masthead { text-align: center; border-bottom: 4px solid #f2b705; padding-bottom: 10px; }
   .masthead .over {
-    font-family: Arial, Helvetica, sans-serif; font-size: 19px; font-weight: bold;
-    letter-spacing: 7px; color: #a31621; text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold;
+    letter-spacing: 8px; color: #f2b705; text-transform: uppercase;
   }
   .masthead h1 {
-    font-size: 54px; line-height: 1.02; letter-spacing: 0; margin-top: 6px;
-    white-space: nowrap;
+    font-size: 52px; line-height: 1.02; letter-spacing: 1px; margin-top: 6px;
+    white-space: nowrap; color: #ffffff;
   }
   .masthead .dateline {
-    font-family: Arial, Helvetica, sans-serif; font-size: 21px; font-weight: bold;
-    letter-spacing: 2px; margin-top: 8px; color: #33302a;
+    font-family: Arial, Helvetica, sans-serif; font-size: 19px; font-weight: bold;
+    letter-spacing: 2px; margin-top: 8px; color: #b8c6cf;
   }
-  .masthead .dateline b { color: #a31621; }
+  .masthead .dateline b { color: #e5484d; }
   /* ---------- lead story ---------- */
   .lead {
     display: flex; gap: 22px; align-items: center;
-    border-bottom: 2px solid #191713; padding: 16px 4px 14px 4px;
+    background: #122636; border: 1px solid #2a475c; border-radius: 10px;
+    margin-top: 14px; padding: 16px 20px 15px 20px;
   }
-  .lead .art { flex: 0 0 150px; height: 150px; }
+  .lead .art { flex: 0 0 168px; height: 168px; }
   .lead .txt { flex: 1; }
   .kicker {
-    font-family: Arial, Helvetica, sans-serif; font-size: 17px; font-weight: bold;
-    letter-spacing: 3px; color: #a31621; text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold;
+    letter-spacing: 3px; color: #f2b705; text-transform: uppercase;
   }
-  .lead h2 { font-size: 40px; line-height: 1.05; margin: 6px 0 8px 0; }
-  .lead p { font-size: 22px; line-height: 1.3; }
-  /* ---------- grid of four ---------- */
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-  .cell {
-    display: flex; gap: 16px; align-items: flex-start;
-    padding: 15px 14px 13px 4px;
+  .lead h2 { font-size: 41px; line-height: 1.04; margin: 6px 0 8px 0; color: #ffffff; }
+  .lead p { font-size: 21px; line-height: 1.32; color: #d9e2e8; }
+  /* ---------- three columns ---------- */
+  .cols { display: flex; gap: 0; margin-top: 14px; }
+  .col {
+    flex: 1; padding: 6px 16px 4px 16px; text-align: left;
   }
-  .cell:nth-child(odd) { border-right: 1px solid #b9b2a0; padding-right: 18px; }
-  .cell:nth-child(even) { padding-left: 18px; }
-  .cell:nth-child(1), .cell:nth-child(2) { border-bottom: 1px solid #b9b2a0; }
-  .cell .art { flex: 0 0 96px; height: 96px; margin-top: 4px; }
-  .cell h3 { font-size: 27px; line-height: 1.08; margin: 5px 0 6px 0; }
-  .cell p { font-size: 20px; line-height: 1.28; }
-  /* ---------- bottom strip ---------- */
-  .strip {
-    display: flex; gap: 18px; align-items: center;
-    border-top: 2px solid #191713; margin-top: 4px; padding: 13px 4px 0 4px;
-  }
-  .strip .art { flex: 0 0 74px; height: 74px; }
-  .strip h3 { font-size: 26px; line-height: 1.1; margin: 4px 0 4px 0; }
-  .strip h3 span { color: #a31621; }
-  .strip p { font-size: 20px; line-height: 1.28; }
+  .col + .col { border-left: 1px solid #2a475c; }
+  .col .art { display: block; margin: 0 auto 8px auto; width: 104px; height: 104px; }
+  .col h3 { font-size: 26px; line-height: 1.1; margin: 5px 0 6px 0; color: #ffffff; text-align: center; }
+  .col .kick { text-align: center; }
+  .col p { font-size: 19px; line-height: 1.3; color: #d9e2e8; }
+  /* ---------- bottom row: two stories ---------- */
+  .bottom { display: flex; gap: 0; margin-top: 14px; border-top: 2px solid #f2b705; padding-top: 13px; }
+  .bcell { flex: 1; display: flex; gap: 15px; align-items: flex-start; padding: 2px 16px 0 4px; }
+  .bcell + .bcell { border-left: 1px solid #2a475c; padding-left: 18px; }
+  .bcell .art { flex: 0 0 84px; height: 84px; margin-top: 3px; }
+  .bcell h3 { font-size: 25px; line-height: 1.1; margin: 4px 0 5px 0; color: #ffffff; }
+  .bcell p { font-size: 19px; line-height: 1.28; color: #d9e2e8; }
   /* ---------- footer ---------- */
   .footer {
-    margin-top: 12px; padding-top: 9px; border-top: 1px solid #191713;
-    font-family: Arial, Helvetica, sans-serif; font-size: 15.5px; line-height: 1.45; color: #4a463d;
+    margin-top: 13px; padding-top: 9px; border-top: 1px solid #2a475c;
+    font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 1.45; color: #8ba0ad;
     text-align: center;
   }
-  .footer b { color: #191713; }
+  .footer b { color: #f2ede3; }
 </style>
 </head>
 <body>
 
   <div class="masthead">
-    <div class="over">The World in One Image</div>
+    <div class="over">The World in One Image &mdash; Night Edition</div>
     <h1>THURSDAY 19 NOVEMBER 2026</h1>
-    <div class="dateline">WORLD NEWS &nbsp;·&nbsp; SIX STORIES FROM ONE DAY &nbsp;·&nbsp; <b>19 NOV 2026</b></div>
+    <div class="dateline">WORLD NEWS &nbsp;&middot;&nbsp; SIX STORIES FROM ONE DAY &nbsp;&middot;&nbsp; <b>19 NOV 2026</b></div>
   </div>
 
-  <!-- LEAD: GTA VI launches -->
+  <!-- LEAD: Shenzhen trilateral -->
   <div class="lead">
-    <svg class="art" viewBox="0 0 172 172" aria-label="Game controller over a neon skyline">
-      <rect x="10" y="52" width="152" height="78" rx="34" fill="#16324f"/>
-      <rect x="10" y="52" width="152" height="78" rx="34" fill="none" stroke="#f6f1e5" stroke-width="3"/>
-      <rect x="34" y="80" width="12" height="34" rx="3" fill="#f6f1e5"/>
-      <rect x="23" y="91" width="34" height="12" rx="3" fill="#f6f1e5"/>
-      <circle cx="118" cy="84" r="8" fill="#f2b705"/>
-      <circle cx="136" cy="98" r="8" fill="#a31621"/>
-      <circle cx="100" cy="98" r="8" fill="#7fa3c4"/>
-      <circle cx="118" cy="112" r="8" fill="#f6f1e5"/>
-      <circle cx="62" cy="112" r="9" fill="#f2b705"/>
-      <circle cx="86" cy="66" r="4" fill="#f2b705"/>
-      <rect x="52" y="42" width="26" height="12" rx="6" fill="#f2b705"/>
-      <rect x="94" y="42" width="26" height="12" rx="6" fill="#f2b705"/>
+    <svg class="art" viewBox="0 0 168 168" aria-label="Three leaders around one table">
+      <circle cx="84" cy="84" r="78" fill="#0d1b26" stroke="#f2b705" stroke-width="3"/>
+      <circle cx="84" cy="52" r="24" fill="#e5484d"/>
+      <circle cx="56" cy="104" r="24" fill="#f2b705"/>
+      <circle cx="112" cy="104" r="24" fill="#7fa3c4"/>
+      <text x="84" y="60" font-family="Arial" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">US</text>
+      <text x="56" y="112" font-family="Arial" font-size="20" font-weight="bold" fill="#0d1b26" text-anchor="middle">CN</text>
+      <text x="112" y="112" font-family="Arial" font-size="20" font-weight="bold" fill="#0d1b26" text-anchor="middle">RU</text>
+      <path d="M84 76 L84 84 M60 82 L78 84 M108 82 L90 84" stroke="#f2ede3" stroke-width="3"/>
+      <circle cx="84" cy="84" r="5" fill="#f2ede3"/>
+      <path d="M28 140 Q84 128 140 140" fill="none" stroke="#f2b705" stroke-width="3"/>
     </svg>
     <div class="txt">
-      <div class="kicker">Culture &middot; Games &mdash; Lead story</div>
-      <h2>Vice City opens its doors at last</h2>
-      <p>Grand Theft Auto VI rolls out worldwide on Thursday, 13 years after GTA V
-      &mdash; back to Vice City with Lucia and Jason, on PlayStation 5 and
-      Xbox Series X|S from $79.99.</p>
+      <div class="kicker">Diplomacy &middot; China &mdash; Lead story</div>
+      <h2>Three leaders, one table in Shenzhen</h2>
+      <p>Trump, Xi and Putin hold a first-ever trilateral summit on the APEC
+      sidelines &mdash; nuclear arms, Ukraine and the Iran war on the agenda.
+      The talks last barely an hour. No deal is expected.</p>
     </div>
   </div>
 
-  <!-- GRID: four stories -->
-  <div class="grid">
-    <div class="cell">
-      <svg class="art" viewBox="0 0 96 96" aria-label="Capitol dome">
-        <path d="M48 6 C30 14 24 26 24 38 L72 38 C72 26 66 14 48 6 Z" fill="#16324f"/>
-        <rect x="46" y="2" width="4" height="10" fill="#16324f"/>
-        <circle cx="48" cy="4" r="3" fill="#f2b705"/>
-        <rect x="20" y="38" width="56" height="6" fill="#16324f"/>
-        <g fill="#16324f">
-          <rect x="22" y="46" width="6" height="26"/><rect x="34" y="46" width="6" height="26"/>
-          <rect x="45" y="46" width="6" height="26"/><rect x="56" y="46" width="6" height="26"/>
-          <rect x="68" y="46" width="6" height="26"/>
-        </g>
-        <rect x="16" y="72" width="64" height="6" fill="#16324f"/>
-        <rect x="12" y="78" width="72" height="8" fill="#a31621"/>
-        <rect x="42" y="52" width="12" height="20" fill="#f6f1e5"/>
+  <!-- THREE COLUMNS -->
+  <div class="cols">
+    <div class="col">
+      <svg class="art" viewBox="0 0 104 104" aria-label="Tanker on waves">
+        <circle cx="52" cy="52" r="48" fill="#122636" stroke="#2a475c" stroke-width="2"/>
+        <path d="M18 58 L86 58 L80 72 L24 72 Z" fill="#e5484d"/>
+        <rect x="60" y="44" width="14" height="14" fill="#f2ede3"/>
+        <rect x="40" y="50" width="12" height="8" fill="#f2b705"/>
+        <path d="M12 82 Q28 74 44 80 T76 80 T94 78" fill="none" stroke="#7fa3c4" stroke-width="4"/>
+        <path d="M16 90 Q32 84 48 88 T84 88" fill="none" stroke="#7fa3c4" stroke-width="4"/>
       </svg>
-      <div>
-        <div class="kicker">U.S. &middot; Politics</div>
-        <h3>Jeffries nominated for Speaker</h3>
-        <p>House Democrats pick Hakeem Jeffries, 251&ndash;11, as their Speaker nominee
-        &mdash; in line to be the first Black Speaker. Peltola&rsquo;s Alaska win
-        seals a 56&ndash;44 Senate majority.</p>
-      </div>
+      <div class="kick kicker">Middle East &middot; Gulf</div>
+      <h3>Tanker hit off Oman as Gulf war widens</h3>
+      <p>A tanker is struck in its engine room near the Strait of Hormuz.
+      Saudi Arabia intercepts a Houthi missile, and strikes and
+      counter-strikes spread across the region.</p>
     </div>
 
-    <div class="cell">
-      <svg class="art" viewBox="0 0 96 96" aria-label="Globe with three stars">
-        <circle cx="48" cy="48" r="42" fill="#16324f"/>
-        <ellipse cx="48" cy="48" rx="42" ry="16" fill="none" stroke="#7fa3c4" stroke-width="2"/>
-        <ellipse cx="48" cy="48" rx="16" ry="42" fill="none" stroke="#7fa3c4" stroke-width="2"/>
-        <path d="M18 34 L21 41 L28 41 L22.5 45.5 L24.5 52 L18 48 L11.5 52 L13.5 45.5 L8 41 L15 41 Z" fill="#f2b705"/>
-        <path d="M66 18 L68.4 23.6 L74.5 24.2 L70 28.4 L71.2 34.5 L66 31.4 L60.8 34.5 L62 28.4 L57.5 24.2 L63.6 23.6 Z" fill="#f2b705"/>
-        <path d="M72 62 L74 67 L79.5 67.5 L75.4 71 L76.6 76.5 L72 73.8 L67.4 76.5 L68.6 71 L64.5 67.5 L70 67 Z" fill="#a31621"/>
-        <circle cx="48" cy="48" r="4" fill="#f6f1e5"/>
+    <div class="col">
+      <svg class="art" viewBox="0 0 104 104" aria-label="Game controller">
+        <circle cx="52" cy="52" r="48" fill="#122636" stroke="#2a475c" stroke-width="2"/>
+        <rect x="18" y="38" width="68" height="34" rx="15" fill="#16324f" stroke="#f2ede3" stroke-width="2"/>
+        <rect x="28" y="50" width="5" height="14" rx="2" fill="#f2ede3"/>
+        <rect x="23" y="55" width="15" height="5" rx="2" fill="#f2ede3"/>
+        <circle cx="66" cy="50" r="4" fill="#f2b705"/>
+        <circle cx="74" cy="57" r="4" fill="#e5484d"/>
+        <circle cx="58" cy="57" r="4" fill="#7fa3c4"/>
+        <circle cx="66" cy="64" r="4" fill="#f2ede3"/>
       </svg>
-      <div>
-        <div class="kicker">Asia &middot; Diplomacy</div>
-        <h3>Trump, Xi and Putin meet in Shenzhen</h3>
-        <p>The three leaders hold a first-ever trilateral on the APEC sidelines on
-        Thursday, with nuclear arms, Ukraine and Iran on the table. No deal is
-        expected.</p>
-      </div>
+      <div class="kick kicker">Culture &middot; Games</div>
+      <h3>Vice City opens its doors at last</h3>
+      <p>Grand Theft Auto VI rolls out worldwide today, 13 years after GTA V
+      &mdash; back to Vice City with Lucia and Jason, on PlayStation 5 and
+      Xbox Series X|S.</p>
     </div>
 
-    <div class="cell">
-      <svg class="art" viewBox="0 0 96 96" aria-label="Cyclone spiral">
-        <circle cx="48" cy="48" r="42" fill="#16324f"/>
-        <path d="M48 48 m0 -30 a30 30 0 1 1 -21 9 a22 22 0 1 1 16 -6 a15 15 0 1 1 -11 4 a9 9 0 1 1 7 -3"
-          fill="none" stroke="#f6f1e5" stroke-width="5" stroke-linecap="round"/>
-        <circle cx="48" cy="48" r="5" fill="#f2b705"/>
-        <path d="M10 78 Q30 70 48 76 T86 74" fill="none" stroke="#7fa3c4" stroke-width="4"/>
-        <path d="M14 86 Q34 79 52 84 T84 82" fill="none" stroke="#7fa3c4" stroke-width="4"/>
+    <div class="col">
+      <svg class="art" viewBox="0 0 104 104" aria-label="Scales of justice">
+        <circle cx="52" cy="52" r="48" fill="#122636" stroke="#2a475c" stroke-width="2"/>
+        <line x1="52" y1="18" x2="52" y2="78" stroke="#f2b705" stroke-width="4"/>
+        <line x1="26" y1="28" x2="78" y2="28" stroke="#f2b705" stroke-width="4"/>
+        <path d="M26 28 L16 52 L36 52 Z" fill="#f2ede3"/>
+        <path d="M78 28 L68 52 L88 52 Z" fill="#f2ede3"/>
+        <rect x="44" y="78" width="16" height="5" fill="#f2b705"/>
+        <rect x="36" y="83" width="32" height="5" fill="#f2b705"/>
+      </svg>
+      <div class="kick kicker">Law &middot; The Hague</div>
+      <h3>Verdict day for Myanmar at the world court</h3>
+      <p>The International Court of Justice rules today on whether
+      Myanmar&rsquo;s 2017 crackdown on the Rohingya was genocide &mdash;
+      the first such verdict against a state, ever.</p>
+    </div>
+  </div>
+
+  <!-- BOTTOM ROW -->
+  <div class="bottom">
+    <div class="bcell">
+      <svg class="art" viewBox="0 0 84 84" aria-label="Cyclone spiral">
+        <circle cx="42" cy="42" r="40" fill="#122636" stroke="#2a475c" stroke-width="2"/>
+        <path d="M42 42 m0 -26 a26 26 0 1 1 -18 8 a19 19 0 1 1 14 -5 a13 13 0 1 1 -9 3 a8 8 0 1 1 6 -2"
+          fill="none" stroke="#f2ede3" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="42" cy="42" r="4" fill="#f2b705"/>
+        <path d="M10 70 Q28 64 42 68 T74 66" fill="none" stroke="#7fa3c4" stroke-width="3"/>
       </svg>
       <div>
         <div class="kicker">Weather &middot; India</div>
-        <h3>Cyclone Akvan bears down on India</h3>
-        <p>The severe cyclonic storm nears the Andhra&ndash;Odisha coast, with landfall
-        due by Friday noon. Red alerts are in force and schools shut in six
-        Odisha districts.</p>
+        <h3>Cyclone Akvan nears India&rsquo;s east coast</h3>
+        <p>The severe storm is set to cross between Machilipatnam and Puri by
+        Friday noon. Red alerts are in force; schools shut in six Odisha
+        districts.</p>
       </div>
     </div>
 
-    <div class="cell">
-      <svg class="art" viewBox="0 0 96 96" aria-label="Space probe and stars">
-        <circle cx="48" cy="48" r="42" fill="#16324f"/>
-        <g fill="#f6f1e5">
-          <circle cx="20" cy="22" r="2"/><circle cx="74" cy="18" r="2"/><circle cx="80" cy="66" r="2"/>
-          <circle cx="16" cy="64" r="1.6"/><circle cx="60" cy="80" r="1.6"/><circle cx="34" cy="12" r="1.6"/>
-        </g>
-        <path d="M30 62 L52 40 L62 50 L40 72 Z" fill="#f2b705"/>
-        <path d="M52 40 L66 26 L76 36 L62 50 Z" fill="#f6f1e5"/>
-        <line x1="40" y1="72" x2="30" y2="82" stroke="#f6f1e5" stroke-width="3"/>
-        <line x1="62" y1="50" x2="74" y2="62" stroke="#f6f1e5" stroke-width="3"/>
-        <circle cx="28" cy="84" r="3" fill="#a31621"/>
-        <circle cx="76" cy="64" r="3" fill="#a31621"/>
-        <circle cx="48" cy="48" r="4" fill="#f6f1e5"/>
+    <div class="bcell">
+      <svg class="art" viewBox="0 0 84 84" aria-label="Globe with rain">
+        <circle cx="42" cy="42" r="40" fill="#122636" stroke="#2a475c" stroke-width="2"/>
+        <circle cx="42" cy="38" r="24" fill="#16324f"/>
+        <ellipse cx="42" cy="38" rx="24" ry="9" fill="none" stroke="#7fa3c4" stroke-width="2"/>
+        <ellipse cx="42" cy="38" rx="9" ry="24" fill="none" stroke="#7fa3c4" stroke-width="2"/>
+        <path d="M28 62 l-4 8 M42 62 l-4 8 M56 62 l-4 8" stroke="#7fa3c4" stroke-width="3" stroke-linecap="round"/>
       </svg>
       <div>
-        <div class="kicker">Science &middot; Space</div>
-        <h3>Voyager 1 reaches one light-day</h3>
-        <p>After nearly 50 years in space, NASA&rsquo;s Voyager 1 passes one light-day
-        from Earth &mdash; about 26 billion kilometres out. NASA confirms the
-        milestone today.</p>
+        <div class="kicker">Climate &middot; COP31</div>
+        <h3>Climate talks grind on as Gaza floods</h3>
+        <p>COP31 enters its final stretch in Antalya with 144 items still
+        disputed &mdash; as winter rains damage 40,000 family shelters
+        in Gaza.</p>
       </div>
-    </div>
-  </div>
-
-  <!-- BOTTOM STRIP: measles -->
-  <div class="strip">
-    <svg class="art" viewBox="0 0 74 74" aria-label="Virus">
-      <circle cx="37" cy="37" r="20" fill="#a31621"/>
-      <g stroke="#a31621" stroke-width="4" stroke-linecap="round">
-        <line x1="37" y1="12" x2="37" y2="4"/><line x1="37" y1="62" x2="37" y2="70"/>
-        <line x1="12" y1="37" x2="4" y2="37"/><line x1="62" y1="37" x2="70" y2="37"/>
-        <line x1="19" y1="19" x2="13" y2="13"/><line x1="55" y1="19" x2="61" y2="13"/>
-        <line x1="19" y1="55" x2="13" y2="61"/><line x1="55" y1="55" x2="61" y2="61"/>
-      </g>
-      <g fill="#f6f1e5">
-        <circle cx="30" cy="32" r="4"/><circle cx="44" cy="30" r="3"/><circle cx="40" cy="44" r="4"/>
-        <circle cx="28" cy="46" r="2.5"/>
-      </g>
-    </svg>
-    <div>
-      <div class="kicker">Health &middot; U.S.</div>
-      <h3>U.S. loses measles-free status after <span>26 years</span></h3>
-      <p>Record case numbers end the measles elimination status the United States
-      has held since 2000, health officials confirm.</p>
     </div>
   </div>
 
   <div class="footer">
-    <b>Sources:</b> AP &middot; Reuters &middot; BBC &middot; India Meteorological Department &mdash; 19 November 2026<br>
+    <b>Sources:</b> NYT &middot; BBC &middot; Reuters &middot; Yonhap &middot; Nikkei Asia &middot; The Hindu &middot; UKMTO &mdash; 19 November 2026<br>
     All six stories happened, or were first reported, on Thursday 19 November 2026.
   </div>
 

@@ -1,10 +1,12 @@
-// news-image-20261119 entry (Node 22, standard library only).
+// news-image-20261119 entry, redrawn as the dark "Night Edition" (Node 22,
+// standard library only).
 //
-// The image is the entry.png beside this file: a hand-drawn newspaper-style
-// infographic summing up Thursday 19 November 2026, rendered from news.html
-// with a local headless Chromium. This program only copies that image to the
-// output directory and checks it still meets the gate (whole PNG, <= 1 MiB,
-// <= 1024 x 1024), so both runs write byte-identical output.
+// The entry is the entry.png beside this file: a one-page newspaper front
+// page summing up Thursday 19 November 2026, rendered from news.html with a
+// local headless Chromium. This program only copies that image into the
+// output directory and checks it still satisfies the gate (a whole PNG, at
+// most 1 MiB, at most 1024 by 1024 pixels), so the two grading runs write
+// byte-identical output.
 //
 // Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
 //   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
@@ -22,7 +24,9 @@ const target: string = join(outDir, 'entry.png');
 
 // The gate: a whole PNG of at most 1 MiB and at most 1024 by 1024 pixels.
 const bytes: Buffer = readFileSync(source);
-const PNG_MAGIC: Buffer = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
+const PNG_MAGIC: Buffer = Buffer.from([
+  0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a,
+]);
 if (!bytes.subarray(0, 8).equals(PNG_MAGIC)) {
   throw new Error('entry.png is not a PNG file');
 }
