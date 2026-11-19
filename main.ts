@@ -38,6 +38,14 @@ const height: number = bytes.readUInt32BE(20);
 if (width > 1024 || height > 1024) {
   throw new Error(`entry.png is ${width}x${height}, over the 1024x1024 limit`);
 }
+// A whole PNG ends with its IEND chunk; a truncated file would still pass
+// the header and size checks above, so verify the trailer too.
+const IEND: Buffer = Buffer.from([
+  0x00, 0x00, 0x00, 0x00, 0x49, 0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82,
+]);
+if (!bytes.subarray(bytes.length - 12).equals(IEND)) {
+  throw new Error('entry.png does not end with an IEND chunk (truncated?)');
+}
 
 mkdirSync(outDir, { recursive: true });
 copyFileSync(source, target);
